@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import type { Session, User } from "@supabase/supabase-js";
-import { supabase } from "@/integrations/supabase/client";
 
 type Role =
   | "admin" | "teacher" | "staff" | "employee"
@@ -23,27 +22,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [roles, setRoles] = useState<Role[]>([]);
   const [loading, setLoading] = useState(true);
+  const [sb, setSb] = useState<typeof import("@/integrations/supabase/client").supabase | null>(null);
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, s) => {
-      setSession(s);
-      setUser(s?.user ?? null);
-      if (s?.user) {
-        setTimeout(() => loadRoles(s.user.id), 0);
-      } else {
-        setRoles([]);
-      }
-    });
-    supabase.auth.getSession().then(({ data }) => {
+    let unsub: (() => void) | undefined;
+    (async () => {
+      const { supabase } = await import("@/integrations/supabase/client");
+      setSb(supabase);
+      const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, s) => {
+        setSession(s);
+        setUser(s?.user ?? null);
+        if (s?.user) setTimeout(() => loadRoles(supabase, s.user.id), 0);
+        else setRoles([]);
+      });
+      unsub = () => subscription.unsubscribe();
+      const { data } = await supabase.auth.getSession();
       setSession(data.session);
       setUser(data.session?.user ?? null);
-      if (data.session?.user) loadRoles(data.session.user.id);
+      if (data.session?.user) await loadRoles(supabase, data.session.user.id);
       setLoading(false);
-    });
-    return () => subscription.unsubscribe();
+    })();
+    return () => { unsub?.(); };
   }, []);
 
-  async function loadRoles(uid: string) {
+  async function loadRoles(supabase: NonNullable<typeof sb>, uid: string) {
     const { data } = await supabase.from("user_roles").select("role").eq("user_id", uid);
     setRoles((data ?? []).map((r) => r.role as Role));
   }
@@ -52,10 +54,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     user, session, roles, loading,
     hasRole: (r) => roles.includes(r),
     signIn: async (email, password) => {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (!sb) return { error: "Auth not ready" };
+      const { error } = await sb.auth.signInWithPassword({ email, password });
       return { error: error?.message ?? null };
     },
-    signOut: async () => { await supabase.auth.signOut(); },
+    signOut: async () => { if (sb) await sb.auth.signOut(); },
   };
 
   return <AuthCtx.Provider value={value}>{children}</AuthCtx.Provider>;
