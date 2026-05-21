@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import type { Session, User } from "@supabase/supabase-js";
+import type { Session, SupabaseClient, User } from "@supabase/supabase-js";
+import type { Database } from "@/integrations/supabase/types";
 
 type Role =
   | "admin" | "teacher" | "staff" | "employee"
@@ -22,7 +23,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [roles, setRoles] = useState<Role[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sb, setSb] = useState<typeof import("@/integrations/supabase/client").supabase | null>(null);
+  const [sb, setSb] = useState<SupabaseClient<Database> | null>(null);
 
   useEffect(() => {
     let unsub: (() => void) | undefined;
@@ -45,7 +46,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => { unsub?.(); };
   }, []);
 
-  async function loadRoles(supabase: NonNullable<typeof sb>, uid: string) {
+  async function loadRoles(supabase: SupabaseClient<Database>, uid: string) {
     const { data } = await supabase.from("user_roles").select("role").eq("user_id", uid);
     setRoles((data ?? []).map((r) => r.role as Role));
   }
