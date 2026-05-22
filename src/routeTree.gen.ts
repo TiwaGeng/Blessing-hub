@@ -9,69 +9,84 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ProgramsRouteImport } from './routes/programs'
-import { Route as NewsRouteImport } from './routes/news'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AdmissionsRouteImport } from './routes/admissions'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AdminIndexRouteImport } from './routes/admin.index'
-import { Route as PortalParentRouteImport } from './routes/portal.parent'
+import { Route as WebsiteIndexRouteImport } from './routes/website/index'
+import { Route as TeacherIndexRouteImport } from './routes/teacher/index'
+import { Route as StockIndexRouteImport } from './routes/stock/index'
+import { Route as LibraryIndexRouteImport } from './routes/library/index'
+import { Route as FinanceIndexRouteImport } from './routes/finance/index'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as WebsiteProgramsRouteImport } from './routes/website/programs'
+import { Route as WebsiteNewsRouteImport } from './routes/website/news'
+import { Route as WebsiteGalleryRouteImport } from './routes/website/gallery'
+import { Route as WebsiteFaqRouteImport } from './routes/website/faq'
+import { Route as WebsiteContactRouteImport } from './routes/website/contact'
+import { Route as WebsiteAdmissionsRouteImport } from './routes/website/admissions'
+import { Route as WebsiteAboutRouteImport } from './routes/website/about'
+import { Route as TeacherTimetableRouteImport } from './routes/teacher/timetable'
+import { Route as TeacherReportsRouteImport } from './routes/teacher/reports'
+import { Route as TeacherMarksRouteImport } from './routes/teacher/marks'
+import { Route as TeacherCoursesRouteImport } from './routes/teacher/courses'
+import { Route as TeacherAttendanceRouteImport } from './routes/teacher/attendance'
+import { Route as TeacherAssignmentsRouteImport } from './routes/teacher/assignments'
+import { Route as StockReportsRouteImport } from './routes/stock/reports'
+import { Route as StockProductsRouteImport } from './routes/stock/products'
+import { Route as StockOutRouteImport } from './routes/stock/out'
+import { Route as StockNotificationsRouteImport } from './routes/stock/notifications'
+import { Route as StockInRouteImport } from './routes/stock/in'
+import { Route as LibraryReturnRouteImport } from './routes/library/return'
+import { Route as LibraryReportsRouteImport } from './routes/library/reports'
+import { Route as LibraryBorrowRouteImport } from './routes/library/borrow'
+import { Route as LibraryBooksRouteImport } from './routes/library/books'
+import { Route as FinanceStructureRouteImport } from './routes/finance/structure'
+import { Route as FinanceReportsRouteImport } from './routes/finance/reports'
+import { Route as FinanceIncomeRouteImport } from './routes/finance/income'
+import { Route as FinanceFeesRouteImport } from './routes/finance/fees'
+import { Route as FinanceExpensesRouteImport } from './routes/finance/expenses'
 import { Route as AuthLoginRouteImport } from './routes/auth.login'
-import { Route as AdminUsersRouteImport } from './routes/admin.users'
-import { Route as AdminTeachersRouteImport } from './routes/admin.teachers'
-import { Route as AdminStudentsRouteImport } from './routes/admin.students'
-import { Route as AdminStockRouteImport } from './routes/admin.stock'
-import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
-import { Route as AdminMarksRouteImport } from './routes/admin.marks'
-import { Route as AdminLibraryRouteImport } from './routes/admin.library'
-import { Route as AdminHrRouteImport } from './routes/admin.hr'
-import { Route as AdminFinanceRouteImport } from './routes/admin.finance'
-import { Route as AdminCommunicationRouteImport } from './routes/admin.communication'
-import { Route as AdminCalendarRouteImport } from './routes/admin.calendar'
-import { Route as AdminAttendanceRouteImport } from './routes/admin.attendance'
-import { Route as AdminAcademicsRouteImport } from './routes/admin.academics'
+import { Route as AdminUsersRouteImport } from './routes/admin/users'
+import { Route as AdminTeachersRouteImport } from './routes/admin/teachers'
+import { Route as AdminStudentsRouteImport } from './routes/admin/students'
+import { Route as AdminStockRouteImport } from './routes/admin/stock'
+import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
+import { Route as AdminMarksRouteImport } from './routes/admin/marks'
+import { Route as AdminLibraryRouteImport } from './routes/admin/library'
+import { Route as AdminHrRouteImport } from './routes/admin/hr'
+import { Route as AdminFinanceRouteImport } from './routes/admin/finance'
+import { Route as AdminCommunicationRouteImport } from './routes/admin/communication'
+import { Route as AdminCalendarRouteImport } from './routes/admin/calendar'
+import { Route as AdminAttendanceRouteImport } from './routes/admin/attendance'
+import { Route as AdminAcademicsRouteImport } from './routes/admin/academics'
+import { Route as WebsitePortalParentRouteImport } from './routes/website/portal.parent'
 
-const ProgramsRoute = ProgramsRouteImport.update({
-  id: '/programs',
-  path: '/programs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsRoute = NewsRouteImport.update({
-  id: '/news',
-  path: '/news',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdmissionsRoute = AdmissionsRouteImport.update({
-  id: '/admissions',
-  path: '/admissions',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteIndexRoute = WebsiteIndexRouteImport.update({
+  id: '/website/',
+  path: '/website/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherIndexRoute = TeacherIndexRouteImport.update({
+  id: '/teacher/',
+  path: '/teacher/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockIndexRoute = StockIndexRouteImport.update({
+  id: '/stock/',
+  path: '/stock/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryIndexRoute = LibraryIndexRouteImport.update({
+  id: '/library/',
+  path: '/library/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceIndexRoute = FinanceIndexRouteImport.update({
+  id: '/finance/',
+  path: '/finance/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
@@ -79,9 +94,139 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
   path: '/admin/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortalParentRoute = PortalParentRouteImport.update({
-  id: '/portal/parent',
-  path: '/portal/parent',
+const WebsiteProgramsRoute = WebsiteProgramsRouteImport.update({
+  id: '/website/programs',
+  path: '/website/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteNewsRoute = WebsiteNewsRouteImport.update({
+  id: '/website/news',
+  path: '/website/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteGalleryRoute = WebsiteGalleryRouteImport.update({
+  id: '/website/gallery',
+  path: '/website/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteFaqRoute = WebsiteFaqRouteImport.update({
+  id: '/website/faq',
+  path: '/website/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteContactRoute = WebsiteContactRouteImport.update({
+  id: '/website/contact',
+  path: '/website/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteAdmissionsRoute = WebsiteAdmissionsRouteImport.update({
+  id: '/website/admissions',
+  path: '/website/admissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteAboutRoute = WebsiteAboutRouteImport.update({
+  id: '/website/about',
+  path: '/website/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherTimetableRoute = TeacherTimetableRouteImport.update({
+  id: '/teacher/timetable',
+  path: '/teacher/timetable',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherReportsRoute = TeacherReportsRouteImport.update({
+  id: '/teacher/reports',
+  path: '/teacher/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherMarksRoute = TeacherMarksRouteImport.update({
+  id: '/teacher/marks',
+  path: '/teacher/marks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherCoursesRoute = TeacherCoursesRouteImport.update({
+  id: '/teacher/courses',
+  path: '/teacher/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherAttendanceRoute = TeacherAttendanceRouteImport.update({
+  id: '/teacher/attendance',
+  path: '/teacher/attendance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherAssignmentsRoute = TeacherAssignmentsRouteImport.update({
+  id: '/teacher/assignments',
+  path: '/teacher/assignments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockReportsRoute = StockReportsRouteImport.update({
+  id: '/stock/reports',
+  path: '/stock/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockProductsRoute = StockProductsRouteImport.update({
+  id: '/stock/products',
+  path: '/stock/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockOutRoute = StockOutRouteImport.update({
+  id: '/stock/out',
+  path: '/stock/out',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockNotificationsRoute = StockNotificationsRouteImport.update({
+  id: '/stock/notifications',
+  path: '/stock/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockInRoute = StockInRouteImport.update({
+  id: '/stock/in',
+  path: '/stock/in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryReturnRoute = LibraryReturnRouteImport.update({
+  id: '/library/return',
+  path: '/library/return',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryReportsRoute = LibraryReportsRouteImport.update({
+  id: '/library/reports',
+  path: '/library/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryBorrowRoute = LibraryBorrowRouteImport.update({
+  id: '/library/borrow',
+  path: '/library/borrow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryBooksRoute = LibraryBooksRouteImport.update({
+  id: '/library/books',
+  path: '/library/books',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceStructureRoute = FinanceStructureRouteImport.update({
+  id: '/finance/structure',
+  path: '/finance/structure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceReportsRoute = FinanceReportsRouteImport.update({
+  id: '/finance/reports',
+  path: '/finance/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceIncomeRoute = FinanceIncomeRouteImport.update({
+  id: '/finance/income',
+  path: '/finance/income',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceFeesRoute = FinanceFeesRouteImport.update({
+  id: '/finance/fees',
+  path: '/finance/fees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceExpensesRoute = FinanceExpensesRouteImport.update({
+  id: '/finance/expenses',
+  path: '/finance/expenses',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthLoginRoute = AuthLoginRouteImport.update({
@@ -154,16 +299,14 @@ const AdminAcademicsRoute = AdminAcademicsRouteImport.update({
   path: '/admin/academics',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WebsitePortalParentRoute = WebsitePortalParentRouteImport.update({
+  id: '/website/portal/parent',
+  path: '/website/portal/parent',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/admissions': typeof AdmissionsRoute
-  '/contact': typeof ContactRoute
-  '/faq': typeof FaqRoute
-  '/gallery': typeof GalleryRoute
-  '/news': typeof NewsRoute
-  '/programs': typeof ProgramsRoute
   '/admin/academics': typeof AdminAcademicsRoute
   '/admin/attendance': typeof AdminAttendanceRoute
   '/admin/calendar': typeof AdminCalendarRoute
@@ -178,18 +321,43 @@ export interface FileRoutesByFullPath {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/users': typeof AdminUsersRoute
   '/auth/login': typeof AuthLoginRoute
-  '/portal/parent': typeof PortalParentRoute
+  '/finance/expenses': typeof FinanceExpensesRoute
+  '/finance/fees': typeof FinanceFeesRoute
+  '/finance/income': typeof FinanceIncomeRoute
+  '/finance/reports': typeof FinanceReportsRoute
+  '/finance/structure': typeof FinanceStructureRoute
+  '/library/books': typeof LibraryBooksRoute
+  '/library/borrow': typeof LibraryBorrowRoute
+  '/library/reports': typeof LibraryReportsRoute
+  '/library/return': typeof LibraryReturnRoute
+  '/stock/in': typeof StockInRoute
+  '/stock/notifications': typeof StockNotificationsRoute
+  '/stock/out': typeof StockOutRoute
+  '/stock/products': typeof StockProductsRoute
+  '/stock/reports': typeof StockReportsRoute
+  '/teacher/assignments': typeof TeacherAssignmentsRoute
+  '/teacher/attendance': typeof TeacherAttendanceRoute
+  '/teacher/courses': typeof TeacherCoursesRoute
+  '/teacher/marks': typeof TeacherMarksRoute
+  '/teacher/reports': typeof TeacherReportsRoute
+  '/teacher/timetable': typeof TeacherTimetableRoute
+  '/website/about': typeof WebsiteAboutRoute
+  '/website/admissions': typeof WebsiteAdmissionsRoute
+  '/website/contact': typeof WebsiteContactRoute
+  '/website/faq': typeof WebsiteFaqRoute
+  '/website/gallery': typeof WebsiteGalleryRoute
+  '/website/news': typeof WebsiteNewsRoute
+  '/website/programs': typeof WebsiteProgramsRoute
   '/admin/': typeof AdminIndexRoute
+  '/finance/': typeof FinanceIndexRoute
+  '/library/': typeof LibraryIndexRoute
+  '/stock/': typeof StockIndexRoute
+  '/teacher/': typeof TeacherIndexRoute
+  '/website/': typeof WebsiteIndexRoute
+  '/website/portal/parent': typeof WebsitePortalParentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/admissions': typeof AdmissionsRoute
-  '/contact': typeof ContactRoute
-  '/faq': typeof FaqRoute
-  '/gallery': typeof GalleryRoute
-  '/news': typeof NewsRoute
-  '/programs': typeof ProgramsRoute
   '/admin/academics': typeof AdminAcademicsRoute
   '/admin/attendance': typeof AdminAttendanceRoute
   '/admin/calendar': typeof AdminCalendarRoute
@@ -204,19 +372,44 @@ export interface FileRoutesByTo {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/users': typeof AdminUsersRoute
   '/auth/login': typeof AuthLoginRoute
-  '/portal/parent': typeof PortalParentRoute
+  '/finance/expenses': typeof FinanceExpensesRoute
+  '/finance/fees': typeof FinanceFeesRoute
+  '/finance/income': typeof FinanceIncomeRoute
+  '/finance/reports': typeof FinanceReportsRoute
+  '/finance/structure': typeof FinanceStructureRoute
+  '/library/books': typeof LibraryBooksRoute
+  '/library/borrow': typeof LibraryBorrowRoute
+  '/library/reports': typeof LibraryReportsRoute
+  '/library/return': typeof LibraryReturnRoute
+  '/stock/in': typeof StockInRoute
+  '/stock/notifications': typeof StockNotificationsRoute
+  '/stock/out': typeof StockOutRoute
+  '/stock/products': typeof StockProductsRoute
+  '/stock/reports': typeof StockReportsRoute
+  '/teacher/assignments': typeof TeacherAssignmentsRoute
+  '/teacher/attendance': typeof TeacherAttendanceRoute
+  '/teacher/courses': typeof TeacherCoursesRoute
+  '/teacher/marks': typeof TeacherMarksRoute
+  '/teacher/reports': typeof TeacherReportsRoute
+  '/teacher/timetable': typeof TeacherTimetableRoute
+  '/website/about': typeof WebsiteAboutRoute
+  '/website/admissions': typeof WebsiteAdmissionsRoute
+  '/website/contact': typeof WebsiteContactRoute
+  '/website/faq': typeof WebsiteFaqRoute
+  '/website/gallery': typeof WebsiteGalleryRoute
+  '/website/news': typeof WebsiteNewsRoute
+  '/website/programs': typeof WebsiteProgramsRoute
   '/admin': typeof AdminIndexRoute
+  '/finance': typeof FinanceIndexRoute
+  '/library': typeof LibraryIndexRoute
+  '/stock': typeof StockIndexRoute
+  '/teacher': typeof TeacherIndexRoute
+  '/website': typeof WebsiteIndexRoute
+  '/website/portal/parent': typeof WebsitePortalParentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/admissions': typeof AdmissionsRoute
-  '/contact': typeof ContactRoute
-  '/faq': typeof FaqRoute
-  '/gallery': typeof GalleryRoute
-  '/news': typeof NewsRoute
-  '/programs': typeof ProgramsRoute
   '/admin/academics': typeof AdminAcademicsRoute
   '/admin/attendance': typeof AdminAttendanceRoute
   '/admin/calendar': typeof AdminCalendarRoute
@@ -231,20 +424,45 @@ export interface FileRoutesById {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/users': typeof AdminUsersRoute
   '/auth/login': typeof AuthLoginRoute
-  '/portal/parent': typeof PortalParentRoute
+  '/finance/expenses': typeof FinanceExpensesRoute
+  '/finance/fees': typeof FinanceFeesRoute
+  '/finance/income': typeof FinanceIncomeRoute
+  '/finance/reports': typeof FinanceReportsRoute
+  '/finance/structure': typeof FinanceStructureRoute
+  '/library/books': typeof LibraryBooksRoute
+  '/library/borrow': typeof LibraryBorrowRoute
+  '/library/reports': typeof LibraryReportsRoute
+  '/library/return': typeof LibraryReturnRoute
+  '/stock/in': typeof StockInRoute
+  '/stock/notifications': typeof StockNotificationsRoute
+  '/stock/out': typeof StockOutRoute
+  '/stock/products': typeof StockProductsRoute
+  '/stock/reports': typeof StockReportsRoute
+  '/teacher/assignments': typeof TeacherAssignmentsRoute
+  '/teacher/attendance': typeof TeacherAttendanceRoute
+  '/teacher/courses': typeof TeacherCoursesRoute
+  '/teacher/marks': typeof TeacherMarksRoute
+  '/teacher/reports': typeof TeacherReportsRoute
+  '/teacher/timetable': typeof TeacherTimetableRoute
+  '/website/about': typeof WebsiteAboutRoute
+  '/website/admissions': typeof WebsiteAdmissionsRoute
+  '/website/contact': typeof WebsiteContactRoute
+  '/website/faq': typeof WebsiteFaqRoute
+  '/website/gallery': typeof WebsiteGalleryRoute
+  '/website/news': typeof WebsiteNewsRoute
+  '/website/programs': typeof WebsiteProgramsRoute
   '/admin/': typeof AdminIndexRoute
+  '/finance/': typeof FinanceIndexRoute
+  '/library/': typeof LibraryIndexRoute
+  '/stock/': typeof StockIndexRoute
+  '/teacher/': typeof TeacherIndexRoute
+  '/website/': typeof WebsiteIndexRoute
+  '/website/portal/parent': typeof WebsitePortalParentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/admissions'
-    | '/contact'
-    | '/faq'
-    | '/gallery'
-    | '/news'
-    | '/programs'
     | '/admin/academics'
     | '/admin/attendance'
     | '/admin/calendar'
@@ -259,18 +477,43 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/users'
     | '/auth/login'
-    | '/portal/parent'
+    | '/finance/expenses'
+    | '/finance/fees'
+    | '/finance/income'
+    | '/finance/reports'
+    | '/finance/structure'
+    | '/library/books'
+    | '/library/borrow'
+    | '/library/reports'
+    | '/library/return'
+    | '/stock/in'
+    | '/stock/notifications'
+    | '/stock/out'
+    | '/stock/products'
+    | '/stock/reports'
+    | '/teacher/assignments'
+    | '/teacher/attendance'
+    | '/teacher/courses'
+    | '/teacher/marks'
+    | '/teacher/reports'
+    | '/teacher/timetable'
+    | '/website/about'
+    | '/website/admissions'
+    | '/website/contact'
+    | '/website/faq'
+    | '/website/gallery'
+    | '/website/news'
+    | '/website/programs'
     | '/admin/'
+    | '/finance/'
+    | '/library/'
+    | '/stock/'
+    | '/teacher/'
+    | '/website/'
+    | '/website/portal/parent'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
-    | '/admissions'
-    | '/contact'
-    | '/faq'
-    | '/gallery'
-    | '/news'
-    | '/programs'
     | '/admin/academics'
     | '/admin/attendance'
     | '/admin/calendar'
@@ -285,18 +528,43 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/users'
     | '/auth/login'
-    | '/portal/parent'
+    | '/finance/expenses'
+    | '/finance/fees'
+    | '/finance/income'
+    | '/finance/reports'
+    | '/finance/structure'
+    | '/library/books'
+    | '/library/borrow'
+    | '/library/reports'
+    | '/library/return'
+    | '/stock/in'
+    | '/stock/notifications'
+    | '/stock/out'
+    | '/stock/products'
+    | '/stock/reports'
+    | '/teacher/assignments'
+    | '/teacher/attendance'
+    | '/teacher/courses'
+    | '/teacher/marks'
+    | '/teacher/reports'
+    | '/teacher/timetable'
+    | '/website/about'
+    | '/website/admissions'
+    | '/website/contact'
+    | '/website/faq'
+    | '/website/gallery'
+    | '/website/news'
+    | '/website/programs'
     | '/admin'
+    | '/finance'
+    | '/library'
+    | '/stock'
+    | '/teacher'
+    | '/website'
+    | '/website/portal/parent'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/admissions'
-    | '/contact'
-    | '/faq'
-    | '/gallery'
-    | '/news'
-    | '/programs'
     | '/admin/academics'
     | '/admin/attendance'
     | '/admin/calendar'
@@ -311,19 +579,44 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/users'
     | '/auth/login'
-    | '/portal/parent'
+    | '/finance/expenses'
+    | '/finance/fees'
+    | '/finance/income'
+    | '/finance/reports'
+    | '/finance/structure'
+    | '/library/books'
+    | '/library/borrow'
+    | '/library/reports'
+    | '/library/return'
+    | '/stock/in'
+    | '/stock/notifications'
+    | '/stock/out'
+    | '/stock/products'
+    | '/stock/reports'
+    | '/teacher/assignments'
+    | '/teacher/attendance'
+    | '/teacher/courses'
+    | '/teacher/marks'
+    | '/teacher/reports'
+    | '/teacher/timetable'
+    | '/website/about'
+    | '/website/admissions'
+    | '/website/contact'
+    | '/website/faq'
+    | '/website/gallery'
+    | '/website/news'
+    | '/website/programs'
     | '/admin/'
+    | '/finance/'
+    | '/library/'
+    | '/stock/'
+    | '/teacher/'
+    | '/website/'
+    | '/website/portal/parent'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  AdmissionsRoute: typeof AdmissionsRoute
-  ContactRoute: typeof ContactRoute
-  FaqRoute: typeof FaqRoute
-  GalleryRoute: typeof GalleryRoute
-  NewsRoute: typeof NewsRoute
-  ProgramsRoute: typeof ProgramsRoute
   AdminAcademicsRoute: typeof AdminAcademicsRoute
   AdminAttendanceRoute: typeof AdminAttendanceRoute
   AdminCalendarRoute: typeof AdminCalendarRoute
@@ -338,66 +631,84 @@ export interface RootRouteChildren {
   AdminTeachersRoute: typeof AdminTeachersRoute
   AdminUsersRoute: typeof AdminUsersRoute
   AuthLoginRoute: typeof AuthLoginRoute
-  PortalParentRoute: typeof PortalParentRoute
+  FinanceExpensesRoute: typeof FinanceExpensesRoute
+  FinanceFeesRoute: typeof FinanceFeesRoute
+  FinanceIncomeRoute: typeof FinanceIncomeRoute
+  FinanceReportsRoute: typeof FinanceReportsRoute
+  FinanceStructureRoute: typeof FinanceStructureRoute
+  LibraryBooksRoute: typeof LibraryBooksRoute
+  LibraryBorrowRoute: typeof LibraryBorrowRoute
+  LibraryReportsRoute: typeof LibraryReportsRoute
+  LibraryReturnRoute: typeof LibraryReturnRoute
+  StockInRoute: typeof StockInRoute
+  StockNotificationsRoute: typeof StockNotificationsRoute
+  StockOutRoute: typeof StockOutRoute
+  StockProductsRoute: typeof StockProductsRoute
+  StockReportsRoute: typeof StockReportsRoute
+  TeacherAssignmentsRoute: typeof TeacherAssignmentsRoute
+  TeacherAttendanceRoute: typeof TeacherAttendanceRoute
+  TeacherCoursesRoute: typeof TeacherCoursesRoute
+  TeacherMarksRoute: typeof TeacherMarksRoute
+  TeacherReportsRoute: typeof TeacherReportsRoute
+  TeacherTimetableRoute: typeof TeacherTimetableRoute
+  WebsiteAboutRoute: typeof WebsiteAboutRoute
+  WebsiteAdmissionsRoute: typeof WebsiteAdmissionsRoute
+  WebsiteContactRoute: typeof WebsiteContactRoute
+  WebsiteFaqRoute: typeof WebsiteFaqRoute
+  WebsiteGalleryRoute: typeof WebsiteGalleryRoute
+  WebsiteNewsRoute: typeof WebsiteNewsRoute
+  WebsiteProgramsRoute: typeof WebsiteProgramsRoute
   AdminIndexRoute: typeof AdminIndexRoute
+  FinanceIndexRoute: typeof FinanceIndexRoute
+  LibraryIndexRoute: typeof LibraryIndexRoute
+  StockIndexRoute: typeof StockIndexRoute
+  TeacherIndexRoute: typeof TeacherIndexRoute
+  WebsiteIndexRoute: typeof WebsiteIndexRoute
+  WebsitePortalParentRoute: typeof WebsitePortalParentRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/programs': {
-      id: '/programs'
-      path: '/programs'
-      fullPath: '/programs'
-      preLoaderRoute: typeof ProgramsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news': {
-      id: '/news'
-      path: '/news'
-      fullPath: '/news'
-      preLoaderRoute: typeof NewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admissions': {
-      id: '/admissions'
-      path: '/admissions'
-      fullPath: '/admissions'
-      preLoaderRoute: typeof AdmissionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website/': {
+      id: '/website/'
+      path: '/website'
+      fullPath: '/website/'
+      preLoaderRoute: typeof WebsiteIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/': {
+      id: '/teacher/'
+      path: '/teacher'
+      fullPath: '/teacher/'
+      preLoaderRoute: typeof TeacherIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/': {
+      id: '/stock/'
+      path: '/stock'
+      fullPath: '/stock/'
+      preLoaderRoute: typeof StockIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library/': {
+      id: '/library/'
+      path: '/library'
+      fullPath: '/library/'
+      preLoaderRoute: typeof LibraryIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/': {
+      id: '/finance/'
+      path: '/finance'
+      fullPath: '/finance/'
+      preLoaderRoute: typeof FinanceIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/': {
@@ -407,11 +718,193 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portal/parent': {
-      id: '/portal/parent'
-      path: '/portal/parent'
-      fullPath: '/portal/parent'
-      preLoaderRoute: typeof PortalParentRouteImport
+    '/website/programs': {
+      id: '/website/programs'
+      path: '/website/programs'
+      fullPath: '/website/programs'
+      preLoaderRoute: typeof WebsiteProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website/news': {
+      id: '/website/news'
+      path: '/website/news'
+      fullPath: '/website/news'
+      preLoaderRoute: typeof WebsiteNewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website/gallery': {
+      id: '/website/gallery'
+      path: '/website/gallery'
+      fullPath: '/website/gallery'
+      preLoaderRoute: typeof WebsiteGalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website/faq': {
+      id: '/website/faq'
+      path: '/website/faq'
+      fullPath: '/website/faq'
+      preLoaderRoute: typeof WebsiteFaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website/contact': {
+      id: '/website/contact'
+      path: '/website/contact'
+      fullPath: '/website/contact'
+      preLoaderRoute: typeof WebsiteContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website/admissions': {
+      id: '/website/admissions'
+      path: '/website/admissions'
+      fullPath: '/website/admissions'
+      preLoaderRoute: typeof WebsiteAdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website/about': {
+      id: '/website/about'
+      path: '/website/about'
+      fullPath: '/website/about'
+      preLoaderRoute: typeof WebsiteAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/timetable': {
+      id: '/teacher/timetable'
+      path: '/teacher/timetable'
+      fullPath: '/teacher/timetable'
+      preLoaderRoute: typeof TeacherTimetableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/reports': {
+      id: '/teacher/reports'
+      path: '/teacher/reports'
+      fullPath: '/teacher/reports'
+      preLoaderRoute: typeof TeacherReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/marks': {
+      id: '/teacher/marks'
+      path: '/teacher/marks'
+      fullPath: '/teacher/marks'
+      preLoaderRoute: typeof TeacherMarksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/courses': {
+      id: '/teacher/courses'
+      path: '/teacher/courses'
+      fullPath: '/teacher/courses'
+      preLoaderRoute: typeof TeacherCoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/attendance': {
+      id: '/teacher/attendance'
+      path: '/teacher/attendance'
+      fullPath: '/teacher/attendance'
+      preLoaderRoute: typeof TeacherAttendanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/assignments': {
+      id: '/teacher/assignments'
+      path: '/teacher/assignments'
+      fullPath: '/teacher/assignments'
+      preLoaderRoute: typeof TeacherAssignmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/reports': {
+      id: '/stock/reports'
+      path: '/stock/reports'
+      fullPath: '/stock/reports'
+      preLoaderRoute: typeof StockReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/products': {
+      id: '/stock/products'
+      path: '/stock/products'
+      fullPath: '/stock/products'
+      preLoaderRoute: typeof StockProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/out': {
+      id: '/stock/out'
+      path: '/stock/out'
+      fullPath: '/stock/out'
+      preLoaderRoute: typeof StockOutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/notifications': {
+      id: '/stock/notifications'
+      path: '/stock/notifications'
+      fullPath: '/stock/notifications'
+      preLoaderRoute: typeof StockNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/in': {
+      id: '/stock/in'
+      path: '/stock/in'
+      fullPath: '/stock/in'
+      preLoaderRoute: typeof StockInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library/return': {
+      id: '/library/return'
+      path: '/library/return'
+      fullPath: '/library/return'
+      preLoaderRoute: typeof LibraryReturnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library/reports': {
+      id: '/library/reports'
+      path: '/library/reports'
+      fullPath: '/library/reports'
+      preLoaderRoute: typeof LibraryReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library/borrow': {
+      id: '/library/borrow'
+      path: '/library/borrow'
+      fullPath: '/library/borrow'
+      preLoaderRoute: typeof LibraryBorrowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library/books': {
+      id: '/library/books'
+      path: '/library/books'
+      fullPath: '/library/books'
+      preLoaderRoute: typeof LibraryBooksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/structure': {
+      id: '/finance/structure'
+      path: '/finance/structure'
+      fullPath: '/finance/structure'
+      preLoaderRoute: typeof FinanceStructureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/reports': {
+      id: '/finance/reports'
+      path: '/finance/reports'
+      fullPath: '/finance/reports'
+      preLoaderRoute: typeof FinanceReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/income': {
+      id: '/finance/income'
+      path: '/finance/income'
+      fullPath: '/finance/income'
+      preLoaderRoute: typeof FinanceIncomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/fees': {
+      id: '/finance/fees'
+      path: '/finance/fees'
+      fullPath: '/finance/fees'
+      preLoaderRoute: typeof FinanceFeesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/expenses': {
+      id: '/finance/expenses'
+      path: '/finance/expenses'
+      fullPath: '/finance/expenses'
+      preLoaderRoute: typeof FinanceExpensesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth/login': {
@@ -512,18 +1005,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminAcademicsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/website/portal/parent': {
+      id: '/website/portal/parent'
+      path: '/website/portal/parent'
+      fullPath: '/website/portal/parent'
+      preLoaderRoute: typeof WebsitePortalParentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  AdmissionsRoute: AdmissionsRoute,
-  ContactRoute: ContactRoute,
-  FaqRoute: FaqRoute,
-  GalleryRoute: GalleryRoute,
-  NewsRoute: NewsRoute,
-  ProgramsRoute: ProgramsRoute,
   AdminAcademicsRoute: AdminAcademicsRoute,
   AdminAttendanceRoute: AdminAttendanceRoute,
   AdminCalendarRoute: AdminCalendarRoute,
@@ -538,8 +1031,40 @@ const rootRouteChildren: RootRouteChildren = {
   AdminTeachersRoute: AdminTeachersRoute,
   AdminUsersRoute: AdminUsersRoute,
   AuthLoginRoute: AuthLoginRoute,
-  PortalParentRoute: PortalParentRoute,
+  FinanceExpensesRoute: FinanceExpensesRoute,
+  FinanceFeesRoute: FinanceFeesRoute,
+  FinanceIncomeRoute: FinanceIncomeRoute,
+  FinanceReportsRoute: FinanceReportsRoute,
+  FinanceStructureRoute: FinanceStructureRoute,
+  LibraryBooksRoute: LibraryBooksRoute,
+  LibraryBorrowRoute: LibraryBorrowRoute,
+  LibraryReportsRoute: LibraryReportsRoute,
+  LibraryReturnRoute: LibraryReturnRoute,
+  StockInRoute: StockInRoute,
+  StockNotificationsRoute: StockNotificationsRoute,
+  StockOutRoute: StockOutRoute,
+  StockProductsRoute: StockProductsRoute,
+  StockReportsRoute: StockReportsRoute,
+  TeacherAssignmentsRoute: TeacherAssignmentsRoute,
+  TeacherAttendanceRoute: TeacherAttendanceRoute,
+  TeacherCoursesRoute: TeacherCoursesRoute,
+  TeacherMarksRoute: TeacherMarksRoute,
+  TeacherReportsRoute: TeacherReportsRoute,
+  TeacherTimetableRoute: TeacherTimetableRoute,
+  WebsiteAboutRoute: WebsiteAboutRoute,
+  WebsiteAdmissionsRoute: WebsiteAdmissionsRoute,
+  WebsiteContactRoute: WebsiteContactRoute,
+  WebsiteFaqRoute: WebsiteFaqRoute,
+  WebsiteGalleryRoute: WebsiteGalleryRoute,
+  WebsiteNewsRoute: WebsiteNewsRoute,
+  WebsiteProgramsRoute: WebsiteProgramsRoute,
   AdminIndexRoute: AdminIndexRoute,
+  FinanceIndexRoute: FinanceIndexRoute,
+  LibraryIndexRoute: LibraryIndexRoute,
+  StockIndexRoute: StockIndexRoute,
+  TeacherIndexRoute: TeacherIndexRoute,
+  WebsiteIndexRoute: WebsiteIndexRoute,
+  WebsitePortalParentRoute: WebsitePortalParentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

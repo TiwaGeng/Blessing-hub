@@ -30,10 +30,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     (async () => {
       const { supabase } = await import("@/integrations/supabase/client");
       setSb(supabase);
-      const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, s) => {
+      const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_e, s) => {
         setSession(s);
         setUser(s?.user ?? null);
-        if (s?.user) setTimeout(() => loadRoles(supabase, s.user.id), 0);
+        if (s?.user) await loadRoles(supabase, s.user.id);
         else setRoles([]);
       });
       unsub = () => subscription.unsubscribe();

@@ -6,13 +6,13 @@ import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/programs", label: "Programs" },
-  { to: "/admissions", label: "Admissions" },
-  { to: "/news", label: "News" },
-  { to: "/gallery", label: "Gallery" },
-  { to: "/contact", label: "Contact" },
+  { to: "/website", label: "Home" },
+  { to: "/website/about", label: "About" },
+  { to: "/website/programs", label: "Programs" },
+  { to: "/website/admissions", label: "Admissions" },
+  { to: "/website/news", label: "News" },
+  { to: "/website/gallery", label: "Gallery" },
+  { to: "/website/contact", label: "Contact" },
 ];
 
 export function PublicLayout({ children }: { children: React.ReactNode }) {
@@ -21,7 +21,7 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
       <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/website" className="flex items-center gap-2">
             <div className="h-9 w-9 rounded-lg bg-primary text-primary-foreground grid place-items-center">
               <GraduationCap className="h-5 w-5" />
             </div>
@@ -47,7 +47,7 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
             <Link to="/auth/login" className="hidden sm:inline-flex">
               <Button variant="outline" size="sm">Portal Login</Button>
             </Link>
-            <Link to="/admissions" className="hidden sm:inline-flex">
+            <Link to="/website/admissions" className="hidden sm:inline-flex">
               <Button size="sm" className="bg-[var(--gold)] text-[var(--gold-foreground)] hover:bg-[var(--gold)]/90">
                 Apply Now
               </Button>
@@ -64,7 +64,7 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
                 <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-medium rounded-md hover:bg-muted">{n.label}</Link>
               ))}
               <Link to="/auth/login" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-medium rounded-md hover:bg-muted">Portal Login</Link>
-              <Link to="/admissions" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold rounded-md text-[var(--gold-foreground)] bg-[var(--gold)]">Apply Now</Link>
+              <Link to="/website/admissions" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold rounded-md text-[var(--gold-foreground)] bg-[var(--gold)]">Apply Now</Link>
             </div>
           </div>
         )}
@@ -90,13 +90,13 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
             <div className="font-semibold mb-3">Quick Links</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {NAV.slice(1).map((n) => (<li key={n.to}><Link to={n.to} className="hover:text-foreground">{n.label}</Link></li>))}
-              <li><Link to="/faq" className="hover:text-foreground">FAQ</Link></li>
+              <li><Link to="/website/faq" className="hover:text-foreground">FAQ</Link></li>
             </ul>
           </div>
           <div>
             <div className="font-semibold mb-3">Portals</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/portal/parent" className="hover:text-foreground">Parent Portal</Link></li>
+              <li><Link to="/website/portal/parent" className="hover:text-foreground">Parent Portal</Link></li>
               <li><Link to="/auth/login" className="hover:text-foreground">Student Login</Link></li>
               <li><Link to="/auth/login" className="hover:text-foreground">Staff Login</Link></li>
               <li><Link to="/auth/login" className="hover:text-foreground">Admin Dashboard</Link></li>
